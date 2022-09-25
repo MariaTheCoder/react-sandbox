@@ -12,7 +12,7 @@ export default function App() {
     setMessages(messagesCopy);
   }
 
-  function clickHandler() {
+  function saveMessage() {
     const messagesCopy = [...messages];
     messagesCopy.push(tempMessage);
     setMessages(messagesCopy);
@@ -23,7 +23,7 @@ export default function App() {
       <Notepad
         messages={messages}
         setTempMessage={setTempMessage}
-        clickHandler={clickHandler}
+        saveMessage={saveMessage}
         deleteItem={deleteItem}
       />
     </div>

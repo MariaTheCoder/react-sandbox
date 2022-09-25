@@ -9,7 +9,7 @@ export default function Notepad(props) {
         <input
           onChange={(event) => props.setTempMessage(event.target.value)}
         ></input>
-        <button onClick={props.clickHandler}>Submit message</button>
+        <button onClick={props.saveMessage}>Submit message</button>
       </div>
     </div>
   );
