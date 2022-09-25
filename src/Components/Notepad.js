@@ -3,7 +3,12 @@ import List from "./List";
 export default function Notepad(props) {
   return (
     <div className="Notepad">
-      <List messages={props.messages} deleteItem={props.deleteItem} />
+      <List
+        messages={props.messages}
+        deleteItem={props.deleteItem}
+        isBeingEdited={props.isBeingEdited}
+        setIsBeingEdited={props.setIsBeingEdited}
+      />
       <div>
         <label>Write a new message: </label>
         <input

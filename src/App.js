@@ -5,6 +5,7 @@ import Notepad from "./Components/Notepad";
 export default function App() {
   const [messages, setMessages] = useState(["hello", "world"]);
   const [tempMessage, setTempMessage] = useState("");
+  const [isBeingEdited, setIsBeingEdited] = useState(false);
 
   function deleteItem(index) {
     const messagesCopy = [...messages];
@@ -28,6 +29,8 @@ export default function App() {
       <Notepad
         messages={messages}
         tempMessage={tempMessage}
+        isBeingEdited={isBeingEdited}
+        setIsBeingEdited={setIsBeingEdited}
         saveTemporaryMessage={saveTemporaryMessage}
         saveMessage={saveMessage}
         deleteItem={deleteItem}
