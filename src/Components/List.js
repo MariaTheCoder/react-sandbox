@@ -1,17 +1,15 @@
-export default function List(props) {
-  function deleteItem(number) {
-    const messagesCopy = [...props.messages];
-    messagesCopy.splice(number, 1);
-    props.setMessages(messagesCopy);
-  }
+import Message from "./Message";
 
+export default function List(props) {
   return (
     <ul className="List">
       {props.messages.map((mes, index) => (
-        <li key={index}>
-          {mes}
-          <button onClick={() => deleteItem(index)}>DELETE</button>
-        </li>
+        <Message
+          key={index}
+          index={index}
+          mes={mes}
+          deleteItem={props.deleteItem}
+        />
       ))}
     </ul>
   );
