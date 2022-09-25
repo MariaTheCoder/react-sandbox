@@ -12,9 +12,8 @@ export default function List(props) {
               key={index}
               index={index}
               mes={mes}
-              isBeingEdited={props.isBeingEdited}
-              setIsBeingEdited={props.setIsBeingEdited}
               deleteItem={props.deleteItem}
+              alterEditMode={props.alterEditMode}
             />
           ))}
         </ul>

@@ -8,13 +8,21 @@ import {
 export default function List(props) {
   return (
     <li>
-      {props.mes}
-      {!props.isBeingEdited ? (
-        <button onClick={() => props.setIsBeingEdited(!props.isBeingEdited)}>
+      {props.mes.text}
+      {!props.mes.editMode ? (
+        <button
+          onClick={() => {
+            props.alterEditMode(props.mes);
+          }}
+        >
           EDIT <FontAwesomeIcon icon={faEraser} />
         </button>
       ) : (
-        <button onClick={() => props.setIsBeingEdited(!props.isBeingEdited)}>
+        <button
+          onClick={() => {
+            props.alterEditMode(props.mes);
+          }}
+        >
           SAVE <FontAwesomeIcon icon={faFloppyDisk} />
         </button>
       )}

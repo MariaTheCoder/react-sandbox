@@ -6,8 +6,7 @@ export default function Notepad(props) {
       <List
         messages={props.messages}
         deleteItem={props.deleteItem}
-        isBeingEdited={props.isBeingEdited}
-        setIsBeingEdited={props.setIsBeingEdited}
+        alterEditMode={props.alterEditMode}
       />
       <div>
         <label>Write a new message: </label>
