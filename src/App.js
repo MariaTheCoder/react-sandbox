@@ -12,6 +12,10 @@ export default function App() {
     setMessages(messagesCopy);
   }
 
+  function saveTemporaryMessage(msg) {
+    setTempMessage(msg);
+  }
+
   function saveMessage() {
     const messagesCopy = [...messages];
     messagesCopy.push(tempMessage);
@@ -22,7 +26,7 @@ export default function App() {
     <div className="App">
       <Notepad
         messages={messages}
-        setTempMessage={setTempMessage}
+        saveTemporaryMessage={saveTemporaryMessage}
         saveMessage={saveMessage}
         deleteItem={deleteItem}
       />
