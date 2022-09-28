@@ -21,7 +21,6 @@ export default function Message(props) {
 
   return (
     <li>
-      {/* {props.mes.text} */}
       <EditMode isBeingEdited={props.mes.editMode} text={mes} />
       {!props.mes.editMode ? (
         <button
@@ -35,7 +34,6 @@ export default function Message(props) {
         <button
           onClick={() => {
             props.alterEditMode(props.mes);
-            // console.log(props.mes.editMode);
           }}
         >
           SAVE <FontAwesomeIcon icon={faFloppyDisk} />
