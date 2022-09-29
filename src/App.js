@@ -28,7 +28,7 @@ export default function App() {
     setTempMessage(msg);
   }
 
-  function saveMessage() {
+  function createMessage() {
     const messagesCopy = [...messages];
     messagesCopy.push({ text: tempMessage, editMode: false });
     setMessages(messagesCopy);
@@ -42,7 +42,7 @@ export default function App() {
         tempMessage={tempMessage}
         alterEditMode={alterEditMode}
         saveTemporaryMessage={saveTemporaryMessage}
-        saveMessage={saveMessage}
+        createMessage={createMessage}
         deleteItem={deleteItem}
       />
     </div>
