@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import Notepad from "./Components/Notepad";
+import uniqid from "uniqid";
 
 export default function App() {
-  const [messages, setMessages] = useState([
-    { id: "0", text: "hello", editMode: false },
-    { id: "1", text: "world", editMode: false },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [tempMessage, setTempMessage] = useState("");
-
+  console.log(messages);
   function alterEditMode(mes) {
     let messagesCopy = [...messages];
 
@@ -30,7 +28,7 @@ export default function App() {
 
   function createMessage() {
     const messagesCopy = [...messages];
-    messagesCopy.push({ text: tempMessage, editMode: false });
+    messagesCopy.push({ id: uniqid(), text: tempMessage, editMode: false });
     setMessages(messagesCopy);
     setTempMessage("");
   }
