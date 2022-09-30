@@ -1,6 +1,18 @@
 import List from "./List";
+import { useState } from "react";
 
 export default function Notepad(props) {
+  const [tempMessage, setTempMessage] = useState("");
+
+  function saveTemporaryMessage(msg) {
+    setTempMessage(msg);
+  }
+
+  function buttonHandler() {
+    props.createMessage(tempMessage);
+    setTempMessage("");
+  }
+
   return (
     <div className="Notepad">
       <List
@@ -11,10 +23,10 @@ export default function Notepad(props) {
       <div>
         <label>Write a new message: </label>
         <input
-          value={props.tempMessage}
-          onChange={(event) => props.saveTemporaryMessage(event.target.value)}
+          value={tempMessage}
+          onChange={(event) => saveTemporaryMessage(event.target.value)}
         ></input>
-        <button onClick={props.createMessage}>Submit message</button>
+        <button onClick={buttonHandler}>Submit message</button>
       </div>
     </div>
   );
